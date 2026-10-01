@@ -42,6 +42,8 @@ File names are identifiers only. The Direction field and visually verified image
 | seated_profile_left.png | SEATED_PROFILE | NOSE_LEFT | visually verified | Side-view NOSE_LEFT seated poses |
 | fullbody_profile_nose_right.png | FULLBODY_PROFILE | NOSE_RIGHT | visually verified | Side-view NOSE_RIGHT standing poses, full-length proportions in profile |
 | seated_profile_nose_right.png | SEATED_PROFILE | NOSE_RIGHT | visually verified | Side-view NOSE_RIGHT seated poses |
+| fullbody_3q_angle_nose_right.png | FULLBODY_3Q_ANGLE | NOSE_RIGHT | visually verified | True 3/4-angle standing poses, nose right; body proportions and pose |
+| fullbody_3q_angle_nose_left.png | FULLBODY_3Q_ANGLE | NOSE_LEFT | visually verified | True 3/4-angle standing poses, nose left; body proportions and pose |
 
 ---
 
@@ -125,7 +127,7 @@ Use primarily for:
 - front-facing standing poses
 - overall physique
 
-In three-quarter and side NOSE_RIGHT full-body generations: contributes leg length and full-length proportions only. Never a direction source in those generations.
+Never a direction source in three-quarter or side-view generations.
 
 Raw URL:
 https://raw.githubusercontent.com/skychwdkh5-design/-ai-model-references/refs/heads/main/fullbody_front.png
@@ -148,6 +150,32 @@ Contains no knees, lower legs or feet — do not use it for leg length or full-l
 
 Raw URL:
 https://raw.githubusercontent.com/skychwdkh5-design/-ai-model-references/refs/heads/main/fullbody_3q_front.png
+
+
+## fullbody_3q_angle_nose_right.png
+Frame type: FULLBODY_3Q_ANGLE
+Direction: NOSE_RIGHT
+
+Visually verified: the whole body and the face are turned about 45 degrees with the nose pointing toward the RIGHT side of the image. Approved Oct 2026.
+"3q_angle" means a true three-quarter VIEW (unlike fullbody_3q_front.png, which is three-quarter LENGTH).
+
+Use for three-quarter-angle NOSE_RIGHT standing poses: body proportions and pose. Never use it in NOSE_LEFT generations.
+
+Raw URL:
+https://raw.githubusercontent.com/skychwdkh5-design/-ai-model-references/refs/heads/main/fullbody_3q_angle_nose_right.png
+
+
+## fullbody_3q_angle_nose_left.png
+Frame type: FULLBODY_3Q_ANGLE
+Direction: NOSE_LEFT
+
+Visually verified: the whole body and the face are turned about 45 degrees with the nose pointing toward the LEFT side of the image. Approved Oct 2026.
+"3q_angle" means a true three-quarter VIEW (unlike fullbody_3q_front.png, which is three-quarter LENGTH).
+
+Use for three-quarter-angle NOSE_LEFT standing poses: body proportions and pose. Never use it in NOSE_RIGHT generations.
+
+Raw URL:
+https://raw.githubusercontent.com/skychwdkh5-design/-ai-model-references/refs/heads/main/fullbody_3q_angle_nose_left.png
 
 
 ## fullbody_back.png
@@ -248,7 +276,7 @@ Before every image generation:
 
 7. For seated compositions, use the appropriate SEATED REFERENCE together with a suitable FACE REFERENCE.
 
-8. For full-body generations, use the set defined in DEFAULT REFERENCE LOGIC: normally one FACE reference plus one FULL BODY reference; three-quarter full-body generations use one 3/4 FACE reference plus fullbody_3q_front.png plus fullbody_front.png, each with the role stated there.
+8. For full-body generations, use the set defined in DEFAULT REFERENCE LOGIC: normally one FACE reference plus one FULL BODY reference; three-quarter full-body generations use the matching 3/4 FACE reference plus the matching fullbody_3q_angle reference, each with the role stated there.
 
 9. Match reference directions to the requested output whenever a matching-direction reference exists.
 
@@ -304,12 +332,12 @@ Front full body:
 face_front.jpg + fullbody_front.png
 
 3/4 full body, NOSE_RIGHT:
-face_3q.jpg + fullbody_3q_front.png + fullbody_front.png
-(face_3q.jpg = identity AND direction authority; fullbody_3q_front.png = torso/body proportions and volume only; fullbody_front.png = leg length and full-length proportions only; direction set by the face reference and the prompt; no mirroring)
+face_3q.jpg + fullbody_3q_angle_nose_right.png
+(face_3q.jpg = identity AND direction authority; fullbody_3q_angle_nose_right.png = matching NOSE_RIGHT 3/4 body proportion and pose reference; no mirroring)
 
 3/4 full body, NOSE_LEFT:
-face_3q_opposite.jpg + fullbody_3q_front.png + fullbody_front.png
-(face_3q_opposite.jpg = identity AND direction authority; fullbody_3q_front.png = torso/body proportions and volume only; fullbody_front.png = leg length and full-length proportions only; direction set by the face reference and the prompt; no mirroring)
+face_3q_opposite.jpg + fullbody_3q_angle_nose_left.png
+(face_3q_opposite.jpg = identity AND direction authority; fullbody_3q_angle_nose_left.png = matching NOSE_LEFT 3/4 body proportion and pose reference; no mirroring)
 
 Side full body, NOSE_LEFT:
 face_profile_left.jpg + fullbody_profile_right.png
@@ -337,4 +365,4 @@ face_profile_right.jpg + seated_profile_nose_right.png
 
 # KNOWN LIMITATIONS
 
-- No true three-quarter-angle body reference exists yet in either direction. Three-quarter full-body direction depends entirely on the 3/4 face reference and the prompt.
+- No three-quarter-angle seated reference exists yet in either direction.
