@@ -23,13 +23,18 @@ facial features
 eyes, nose, lips, jawline and general appearance
 Raw URL: https://raw.githubusercontent.com/skychwdkh5-design/-ai-model-references/refs/heads/main/face_front.jpg
 face_3q.jpg
-Frame type: FACE_3Q Direction: UNFIXED — exact opposite of face_3q_opposite.jpg. Do not assume NOSE_LEFT or NOSE_RIGHT.
+Frame type: FACE_3Q
+Direction: NOSE_RIGHT
 Use primarily when the face is shown at approximately a 3/4 angle.
-Raw URL: https://raw.githubusercontent.com/skychwdkh5-design/-ai-model-references/refs/heads/main/face_3q.jpg
+Raw URL:
+https://raw.githubusercontent.com/skychwdkh5-design/-ai-model-references/refs/heads/main/face_3q.jpg
+
 face_3q_opposite.jpg
-Frame type: FACE_3Q Direction: UNFIXED — exact opposite of face_3q.jpg. Do not assume NOSE_LEFT or NOSE_RIGHT.
-Use when the requested 3/4 angle is opposite to face_3q.jpg.
-Raw URL: https://raw.githubusercontent.com/skychwdkh5-design/-ai-model-references/refs/heads/main/face_3q_opposite.jpg
+Frame type: FACE_3Q
+Direction: NOSE_LEFT
+Use primarily when the face is shown at approximately a 3/4 angle.
+Raw URL:
+https://raw.githubusercontent.com/skychwdkh5-design/-ai-model-references/refs/heads/main/face_3q_opposite.jpg
 face_profile_left.jpg
 Frame type: FACE_PROFILE Direction: NOSE_LEFT
 Use for profile portraits where the nose points to the LEFT side of the image.
