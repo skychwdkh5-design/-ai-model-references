@@ -40,6 +40,8 @@ File names are identifiers only. The Direction field and visually verified image
 | fullbody_profile_right.png | FULLBODY_PROFILE | NOSE_LEFT | visually verified | Side-view NOSE_LEFT standing poses (file name is misleading — Direction is authoritative) |
 | seated_front.png | SEATED_FRONT | FRONT | assigned | Front / near-front seated poses |
 | seated_profile_left.png | SEATED_PROFILE | NOSE_LEFT | visually verified | Side-view NOSE_LEFT seated poses |
+| fullbody_profile_nose_right.png | FULLBODY_PROFILE | NOSE_RIGHT | visually verified | Side-view NOSE_RIGHT standing poses, full-length proportions in profile |
+| seated_profile_nose_right.png | SEATED_PROFILE | NOSE_RIGHT | visually verified | Side-view NOSE_RIGHT seated poses |
 
 ---
 
@@ -173,6 +175,18 @@ Use primarily for side-view NOSE_LEFT standing poses and full-length body propor
 Raw URL:
 https://raw.githubusercontent.com/skychwdkh5-design/-ai-model-references/refs/heads/main/fullbody_profile_right.png
 
+
+## fullbody_profile_nose_right.png
+Frame type: FULLBODY_PROFILE
+Direction: NOSE_RIGHT
+
+Visually verified: face and body both point toward the RIGHT side of the image. Approved Oct 2026.
+
+Use primarily for side-view NOSE_RIGHT standing poses and full-length body proportions in profile. Never use it in NOSE_LEFT generations.
+
+Raw URL:
+https://raw.githubusercontent.com/skychwdkh5-design/-ai-model-references/refs/heads/main/fullbody_profile_nose_right.png
+
 ---
 
 # SEATED REFERENCES
@@ -193,10 +207,22 @@ Direction: NOSE_LEFT
 
 Visually verified: both the face and the seated body orientation point toward the LEFT side of the image.
 
-Use for side-view NOSE_LEFT seated poses. In side seated NOSE_RIGHT generations: proportions only, never a direction source.
+Use for side-view NOSE_LEFT seated poses. Do not use it in side seated NOSE_RIGHT generations; use seated_profile_nose_right.png instead.
 
 Raw URL:
 https://raw.githubusercontent.com/skychwdkh5-design/-ai-model-references/refs/heads/main/seated_profile_left.png
+
+
+## seated_profile_nose_right.png
+Frame type: SEATED_PROFILE
+Direction: NOSE_RIGHT
+
+Visually verified: both the face and the seated body orientation point toward the RIGHT side of the image. Approved Oct 2026.
+
+Use for side-view NOSE_RIGHT seated poses. Never use it in NOSE_LEFT generations.
+
+Raw URL:
+https://raw.githubusercontent.com/skychwdkh5-design/-ai-model-references/refs/heads/main/seated_profile_nose_right.png
 
 ---
 
@@ -290,9 +316,8 @@ face_profile_left.jpg + fullbody_profile_right.png
 (face_profile_left.jpg = facial and directional authority; fullbody_profile_right.png = matching NOSE_LEFT full-body proportion and pose reference)
 
 Side full body, NOSE_RIGHT:
-NO visually verified NOSE_RIGHT full-body profile reference exists.
-Use face_profile_right.jpg + fullbody_front.png
-(face_profile_right.jpg = facial and directional authority; fullbody_front.png = full-length proportions only; direction set by the face reference and the prompt; do NOT use or mirror fullbody_profile_right.png)
+face_profile_right.jpg + fullbody_profile_nose_right.png
+(face_profile_right.jpg = facial and directional authority; fullbody_profile_nose_right.png = matching NOSE_RIGHT full-body proportion and pose reference; do NOT use or mirror fullbody_profile_right.png)
 
 Back full body:
 fullbody_back.png
@@ -305,14 +330,11 @@ face_profile_left.jpg + seated_profile_left.png
 (face_profile_left.jpg = facial and directional authority; seated_profile_left.png = matching NOSE_LEFT seated proportion and pose reference)
 
 Side seated, NOSE_RIGHT:
-NO NOSE_RIGHT seated profile reference exists.
-Use face_profile_right.jpg + seated_profile_left.png
-(face_profile_right.jpg = facial and directional authority; seated_profile_left.png = seated proportions only, never a direction source; direction set by the face reference and the prompt; no mirroring)
+face_profile_right.jpg + seated_profile_nose_right.png
+(face_profile_right.jpg = facial and directional authority; seated_profile_nose_right.png = matching NOSE_RIGHT seated proportion and pose reference; no mirroring)
 
 ---
 
 # KNOWN LIMITATIONS
 
 - No true three-quarter-angle body reference exists yet in either direction. Three-quarter full-body direction depends entirely on the 3/4 face reference and the prompt.
-- No visually verified NOSE_RIGHT full-body profile reference exists. Side full body NOSE_RIGHT uses fullbody_front.png for proportions only.
-- No NOSE_RIGHT seated profile reference exists. Side seated NOSE_RIGHT uses seated_profile_left.png for proportions only.
