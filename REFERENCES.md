@@ -128,10 +128,8 @@ Before every image generation:
 Front portrait:
 face_front.jpg
 
-3/4 portrait:
-face_3q.jpg OR face_3q_opposite.jpg.
-While their directions are UNFIXED: use face_3q.jpg by default and report that the 3/4 direction match was not verified.
-
+3/4 portrait, NOSE_RIGHT: face_3q.jpg
+3/4 portrait, NOSE_LEFT: face_3q_opposite.jpg
 Profile portrait, NOSE_LEFT:
 face_profile_left.jpg
 
@@ -141,9 +139,8 @@ face_profile_right.jpg
 Front full body:
 face_front.jpg + fullbody_front.png
 
-3/4 full body:
-face_3q.jpg or face_3q_opposite.jpg + fullbody_3q_front.png
-(both directions UNFIXED — report that the direction match was not verified)
+3/4 full body, NOSE_RIGHT: face_3q.jpg + fullbody_3q_front.png
+3/4 full body, NOSE_LEFT: face_3q_opposite.jpg + fullbody_3q_front.png (body reference used for proportions only; direction set by face reference and prompt, no mirroring)
 
 Side full body, NOSE_RIGHT:
 face_profile_right.jpg + fullbody_profile_right.png
